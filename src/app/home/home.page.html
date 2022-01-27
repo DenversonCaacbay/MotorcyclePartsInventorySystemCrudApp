@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true">
+
+  
+
+  <div class="container">
+    <img class="logo" src="/assets/motocross_50px.png"><br>
+    <ion-label class="logo1">Motorcycle Parts</ion-label><br>
+    <ion-label class="logo1">Inventory System</ion-label>
+    <br>
+  </div>
+  <h1 class="sign">Log In</h1>
+  <form class="inputs" [formGroup]="loginForm">
+    <ion-label class="inputName">Email</ion-label>
+      <ion-input formControlName="email" placeholder="Email Address"></ion-input>
+      <ion-label class="inputName">Password</ion-label>
+      <ion-input formControlName="password" placeholder="Password">
+      </ion-input>
+
+    <div class="bottom-section">
+      <ion-button (click)="login()" color="tertiary">
+        Log in
+      </ion-button>
+    </div>
+  </form>
+</ion-content>
+

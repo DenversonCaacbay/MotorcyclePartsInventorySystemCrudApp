@@ -1,0 +1,55 @@
+<ion-content>
+  <ion-header class="ion-no-border">
+    <ion-toolbar class="ion-toolbar">
+        <ion-button href="/home" color="tertiary">
+          <ion-icon name="log-out-outline"></ion-icon>
+          Logout</ion-button>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+      <ion-card-title style="padding: 10px; font-size: 18px;">Inventory</ion-card-title>
+  </ion-card>
+  <form [formGroup]="taskForm" class="inputs" (ngSubmit)="onSubmit()">
+   
+    <ion-list lines="none">
+        <ion-input type="hidden" formControlName="id"></ion-input>
+      
+      <ion-item lines="none" >
+        <ion-label position="stacked">Product Name</ion-label>
+        <ion-input class="inputText" type="text" formControlName="product_name"></ion-input>
+      </ion-item>
+        
+      <ion-item lines="none" >
+        <ion-label position="stacked">Description</ion-label>
+        <ion-input class="inputText" type="text" formControlName="description"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label  position="stacked">Price</ion-label>
+        <ion-input  class="inputText" type="text" formControlName="price"></ion-input>
+      </ion-item>
+
+      <ion-item  lines="none">
+        <ion-label position="stacked">Quantity</ion-label>
+        <ion-input  class="inputText" type="text" formControlName="quantity"></ion-input>
+      </ion-item>
+      
+
+  </ion-list>
+
+    <ion-button style="margin:10px" type="submit">Submit</ion-button>
+    <ion-button *ngIf="enableEdit" type="submit">Update</ion-button>
+
+
+    <ion-list lines="none">
+        <ion-item lines="none" *ngFor="let task of tasks">
+          <ion-label>{{task.product_name}}</ion-label>
+          <ion-button  id="{{task.id}}" (click)="editTask($event)" color="tertiary" slot="end">Edit </ion-button>
+          <ion-button id="{{task.id}}"  (click)="deleteTask($event)" color="tertiary" slot="end"> Delete </ion-button>
+        </ion-item>
+    </ion-list>
+
+
+  </form>
+</ion-content>

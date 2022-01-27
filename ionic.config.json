@@ -1,0 +1,7 @@
+{
+  "name": "MotorcycleCrudApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
