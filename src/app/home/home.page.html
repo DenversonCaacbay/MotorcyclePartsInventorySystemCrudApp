@@ -11,9 +11,9 @@
   <h1 class="sign">Log In</h1>
   <form class="inputs" [formGroup]="loginForm">
     <ion-label class="inputName">Email</ion-label>
-      <ion-input formControlName="email" placeholder="Email Address"></ion-input>
+      <ion-input formControlName="email" placeholder="Email Address" required></ion-input>
       <ion-label class="inputName">Password</ion-label>
-      <ion-input formControlName="password" placeholder="Password">
+      <ion-input type="password" formControlName="password" placeholder="Password" required>
       </ion-input>
 
     <div class="bottom-section">

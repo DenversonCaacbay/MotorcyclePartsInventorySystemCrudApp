@@ -12,11 +12,6 @@ import { ToastController } from '@ionic/angular';
 
 export class HomePage implements OnInit {
   loginForm:FormGroup
-//  username = '';
-//  password = new FormControl('');
-//  username = '';
-//  password = new FormControl('');
-//  user: any;
 
   constructor(public router:Router, private FB:FormBuilder, private loginservice:LoginService, public toastController:ToastController) {}
 
@@ -39,6 +34,7 @@ export class HomePage implements OnInit {
         }
         else if(rest.error){
           console.log(rest.error)
+          console.log("hi")
 
         }
       })
@@ -53,11 +49,6 @@ export class HomePage implements OnInit {
       duration: 2000,
     });
     toast.present();
-  }
-
-  RedirectToOtherPage1()
-  {
-    this.router.navigateByUrl('/signup');
   }
 
 
